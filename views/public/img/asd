@@ -1,0 +1,43 @@
+nama
+kode
+odp/dinas
+narsip
+status
+Bulan Tahun
+Hasil
+
+Create data models = 
+[1]     No Definitif            => String                   ---
+[2]     Kode Klasifkasi         => String                   ---
+[14]    Author                  => String (Username)        ---
+[3]     Bulan / Tahun           => String / Date            ---
+[4]     Isi Berkas              => String (Path File)       ---
+[5]     Retensi JRA             => String (Enum [Aktif, Inaktif]) ---
+[6]     Keterangan JRA          => String (Enum [Musnah, Permanen, Dinilai Kembali])  ---
+[7]     Nilai Guna              => String (Enum [Administrasi, Hukum, Keuangan, IPTEK]) ---
+[8]     Media                   => String (Path, Enum [Dokumen, Audio, Video, Elektronik, Tekstua]) ---
+[9]     Tingkat Perkembangan    => String (Enum [Asli, Tembusan, Salinan ganda, FotoCopy, Pertinggal]) ---
+[10]    Lokasi Simpan           => String (Enum [Rak, Box]) ---
+[12]    Date Created            => Date.now                 ---
+[13]    Last Modified           => Date.now                 ---
+[11]    Edited                  => String (Array [Username, Date Modified]) ---
+
+
+{
+    "No_Definitif" : "112334234",
+    "Kode_Klasifikasi" : "112334234",
+    "Properties" : {
+        "Author"    : "Rizqy",
+        "Bulan"     : 3,
+        "Tahun"     : 2000
+    },
+    "Isi_Berkas" : "Data Pribadi",
+    "Retensi_JRA" : "Bla bla",
+    "Keterangan_JRA" : "Ketreangan",
+    "Nilai_Guna" : "Nilai Guna",
+    "Media" : "Boasdad",
+    "Lokasi_Simpan" : "Rumah",
+    "Tingkat_Perkembangan" : "Nolll",
+    "Edited" : {
+    }
+}

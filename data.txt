@@ -1,0 +1,90 @@
+nama
+kode
+odp/dinas
+narsip
+status
+Bulan Tahun
+Hasil
+
+Create data models = 
+[1]     No Definitif            => String                   ---
+[2]     Kode Klasifkasi         => String                   ---
+[14]    Author                  => String (Username)        ---
+[3]     Bulan / Tahun           => String / Date            ---
+[4]     Isi Berkas              => String (Path File)       ---
+[5]     Retensi JRA             => String (Enum [Aktif, Inaktif]) ---
+[6]     Keterangan JRA          => String (Enum [Musnah, Permanen, Dinilai Kembali])  ---
+[7]     Nilai Guna              => String (Enum [Administrasi, Hukum, Keuangan, IPTEK]) ---
+[8]     Media                   => String (Path, Enum [Dokumen, Audio, Video, Elektronik, Tekstua]) ---
+[9]     Tingkat Perkembangan    => String (Enum [Asli, Tembusan, Salinan ganda, FotoCopy, Pertinggal]) ---
+[10]    Lokasi Simpan           => String (Enum [Rak, Box]) ---
+[12]    Date Created            => Date.now                 ---
+[13]    Last Modified           => Date.now                 ---
+[11]    Edited                  => String (Array [Username, Date Modified]) ---
+
+
+Table => {
+    kode => 
+}
+
+
+Category => {
+    Kode => String
+    Nama => String
+    Status => Enum (LOCK, UNLOCK)
+}
+
+req.session.user => 
+{
+  isAuth: true,
+  isAdmin: 'true',
+  id: '603633d0b94c7f19c3df6266',
+  email: 'rizqyadmin@gmail.com'
+}
+
+res.render {
+    userDetail : req.session.user,
+    admin : req.body.Admin,
+    title : "Dashboard",
+    nav : "dashboard"
+}
+
+{
+  name: 'admin1',
+  profile: 'default',
+  isAuth: true,
+  isAdmin: 'true',
+  id: '603faead5e965d0c998522ac',
+  email: 'admin1@gmail.com'
+}
+====================================
+
+Session {
+  cookie: {
+    path: '/',
+    _expires: 2021-03-08T04:26:53.732Z,
+    originalMaxAge: 86400000,
+    httpOnly: true,
+    secure: null,
+    domain: null,
+    sameSite: null
+  },
+  user: {
+    name: 'admin1',
+    profile: 'default',
+    isAuth: true,
+    isAdmin: 'true',
+    id: '603faead5e965d0c998522ac',
+    email: 'admin1'
+  },
+
+const alertMessage = await req.flash("alertMessage");
+const alertStatus =await  req.flash("alertStatus");
+const alert = { message: alertMessage, status: alertStatus };
+
+ <input type="text" name="Kode_Kategori" value="<%= kode %> ">
+ <input type="text" name="idData" value="<%= element. %> ">
+ <input type="text" name="No_Definitif" value="<%= element. %> ">
+ <input type="text" name="Rak" value="<%= element. %> ">
+ <input type="text" name="Boks" value="<%= element. %> ">
+ <input type="text" name="Isi_Berkas" value="<%= element. %> ">

@@ -1,0 +1,248 @@
+<div class="form-container py-3 bg-green-50 w-full overflow-x-scroll test  shadow-inner" style="height:87%";>
+    <form action="<%= Submit%> " class="" method="POST">
+        <div class="flex-container flex flex-col ">
+            <% if (title == "Edit data") { %>
+                <!-- <div class="container flex w-full justify-between px-6">
+                    <a href="/data/delete/<%= id %>/<%= kode %>  ">Delete</a> -->
+                    <div class="t_form-container" >
+                        <label for="Author" class="t_label">Author</label>
+                        <input type="text"  class="t_form w-max bg-transparent" id="Author" value="<%= (typeof No_Definitif !== 'undefined') ? Author : ''%>" disabled>
+                    </div>
+                    <% } %>
+
+            <div class="t_form-container px-10">
+                <label for="Bulan" class="t_label">Bulan / Tahun *</label>
+                <div class="container w-full flex gap-4">
+                    <select name="Bulan" id="" class="t_form py-0 w-1/2">
+                        <option value="Januari">Januari</option>
+                        <option value="Februari">Februari</option>
+                        <option value="Maret">Maret</option>
+                        <option value="April">April</option>
+                        <option value="Mei">Mei</option>
+                        <option value="Juni">Juni</option>
+                        <option value="Juli">Juli</option>
+                        <option value="Agustus">Agustus</option>
+                        <option value="September">September</option>
+                        <option value="November">November</option>
+                        <option value="Desember">Desember</option>
+                    </select>
+                    <input type="number" placeholder="Tahun" class="t_form w-1/3" required min="1900" max="3200" name="Tahun" autocomplete="off" value="<%= (typeof Tahun !== 'undefined') ? Tahun  : ''%>">
+                </div>
+            </div>
+
+            <div class="t_form-container" >
+                <label for="No_Definitif" class="t_label">No Definitif *</label>
+                <input type="number" name="No_Definitif" class="t_form" id="No_Definitif" value="<%= (typeof No_Definitif !== 'undefined') ? No_Definitif  : ''%>" required placeholder="Nomor Definitf" autocomplete="off">
+            </div>
+            
+            <div class="t_form-container">
+                <label for="Kode_Klasifikasi" class="t_label" >Kode Klasifikasi *</label>
+                <input type="number" name="Kode_Klasifikasi" class="t_form" id="Kode_Klasifikasi" value="<%= (typeof Kode_Klasifikasi !== 'undefined') ? Kode_Klasifikasi  : ''%>" required placeholder="Kode Klasifikasi" autocomplete="off">
+            </div>
+
+            <div class="t_form-container px-10">
+                <label for="Bulan" class="t_label" >Kode</label>
+                <input type="number" id="Bulan" name="Kode" class="t_form w-2/6 h-15" value="<%= kode%>" >
+            </div>
+
+            <div class="t_form-container h-full ">
+                <label for="Isi_Berkas" class="t_label ">Isi Berkas *</label>
+                <textarea type="text" id="Isi_Berkas" name="Isi_Berkas" class="t_form h-40 w-full py-2"  required placeholder="Isi Berkas"><%= (typeof Isi_Berkas !== 'undefined') ? Isi_Berkas  : ''%></textarea>
+            </div>
+
+            <div class="t_form-container">
+                <label for="Retensi_JRA" class="t_label">Retensi JRA</label>
+                <div class="container flex gap-10" id="Retensi_JRA">
+                    <label for="aktif" class="t_label" >Aktif</label>
+                    <input type="text" id="aktif" name="Aktif" class="t_form" value="<%= (typeof Aktif !== 'undefined') ? Aktif : ''%>" autocomplete="off">
+                    <label for="inaktif" class="t_label">Inaktif</label>
+                    <input type="text" id="inaktif" name="Inaktif" class="t_form" value="<%= (typeof Inaktif !== 'undefined') ? Inaktif: ''%>" autocomplete="off">
+                </div>
+            </div>
+            
+            <div class="t_form-container">
+                <label for="Keterangan_JRA" class="t_label">Keterangan JRA</label>
+                <select type="text" name="Keterangan_JRA" class="t_form py-0 w-1/4" id="Keterangan_JRA" value="<%= (typeof Keterangan_JRA !== 'undefined') ? Keterangan_JRA: ''%>">
+                    <option value="" disabled>Choose one</option>
+                    <option value="Musnah">MUSNAH</option>
+                    <option value="Permanen">PERMANEN</option>
+                    <option value="Dinilai">DINILAI KEMBALI</option>
+                </select>
+            </div>
+            
+            <div class="t_form-container">
+                <label for="Nilai_Guna" class="t_label">Nilai Guna</label>
+                <select type="text" name="Nilai_Guna" id="Nilai_Guna" class="t_form py-0 w-1/4" value="<%= (typeof Nilai_Guna !== 'undefined') ? Nilai_Guna: ''%>">
+                    <option value="" disabled>Choose one</option>
+                    <option value="Administrasi">ADMINISTRASI</option>
+                    <option value="Hukum">HUKUM</option>
+                    <option value="Keuangan">KEUANGAN</option>
+                    <option value="IPTEK">IPTEK</option>
+                </select>
+            </div>
+            
+            <div class="t_form-container">
+                <label for="Media" class="t_label">Media</label>
+                <select type="text" name="Media" id="Media" class="t_form py-0 w-1/4" value="<%= (typeof Media !== 'undefined') ? Media: ''%>">
+                    <option value="" disabled>Choose one</option>
+                    <option value="Dokumen">Dokumen</option>
+                    <option value="Audio">Audio</option>
+                    <option value="Video">Video</option>
+                    <option value="Elektronik">Elektronik</option>
+                    <option value="Tekstual">Tekstual</option>
+                </select>
+            </div>
+            
+            <div class="t_form-container">
+                <label for="Jumlah" class="t_label" >Jumlah</label>
+                <div class="container flex gap-5" >
+                    <input type="text" id="Jumlah" name="Jumlah_Value" class="t_form w-1/3" value="<%= (typeof Jumlah_Value !== 'undefined') ? Jumlah_Value: ''%>" placeholder="Jumlah" autocomplete="off">
+                    <select name="Jumlah_Jenis" class="t_form py-0" value="<%= (typeof Jumlah_Jenis!== 'undefined') ? Jumlah_Jenis: ''%>">
+                        <option value="" disabled>Choose one</option>
+                        <option value="Berkas">Berkas</option>
+                        <option value="Bandel">Bandel</option>
+                        <option value="Exemplar">Exemplar</option>
+                        <option value="Lembar">Lembar</option>
+                        <option value="Buku">Buku</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="t_form-container">
+                <label for="Tingkat_Perkembangan" class="t_label">Tingkat Perkembangan</label>
+                <select type="text" name="Tingkat_Perkembangan" id="Tingkat_Perkembangan" class="t_form py-0 w-1/4" value="<%= (typeof Tingkat_Perkembangan !== 'undefined') ? Tingkat_Perkembangan: ''%>">
+                    <option value="" disabled>Choose one</option>
+                    <option value="Asli">Asli</option>
+                    <option value="Tembusan">Tembusan</option>
+                    <option value="Salinan">Salinan / Ganda</option>
+                    <option value="Fotocopy">Fotocopy</option>
+                    <option value="Pertinggal">Pertinggal</option>
+                </select>
+            </div>
+
+            <div class="t_form-container">
+                <label for="Lokasi_Simpan" class="t_label">Lokasi Simpan</label>
+                <div class="container flex gap-10" id="Lokasi_Simpan" >
+                    <label for="Rak" class="t_label">Rak</label>
+                    <input type="text" id="Rak" name="Lokasi_Simpan_Rak" class="t_form" value="<%= (typeof Rak !== 'undefined') ? Rak: ''%>" placeholder="Rak" autocomplete="off">
+                    <label for="Boks" class="t_label">Boks</label>
+                    <input type="text" id="Boks" name="Lokasi_Simpan_Boks" class="t_form" value="<%= (typeof Boks !== 'undefined') ? Boks: ''%>" placeholder="Boks" autocomplete="off">
+                </div>
+            </div>
+
+            <hr class="border-3 border-green-200">
+            <!-- ! Korektor not ready now -->
+            <!-- <div class="t_form-container" >
+                <label for="Korektor" class="t_label">Korektor</label>
+                <input type="text" name="Korektor" id="Korektor" class="t_form" value="<%= (typeof Korektor !== 'undefined') ? Korektor: ''%>" disabled>
+            </div> -->
+
+            <div class="flex justify-between px-10 py-4 bg-green-100 shadow-inner">
+                <div class="flex gap-5">
+                    <% if (title == "Edit data") { %>
+                            <a href="/pinjam" class="text-lg font-bold text-red-700 h-full <%= !Pinjam  ? 'hidden' : '' %>">Data sedang dipinjam</a>
+                            <a class="t_secondary-btn float-right  self-center h-full px-10 flex items-center shadow-md cursor-pointer <%= Pinjam  ? 'hidden' : '' %>" onclick="modal('pinjam')">Pinjam</a>
+                            <a class="t_red-btn bg-red-800  float-right  self-center m-0 shadow-md cursor-pointer <%= Pinjam  ? 'hidden' : '' %> " onclick="modal('delete')">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" class width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> -->
+                                Delete</a>
+                    <% } %>
+                </div>
+                <input class="t_primary-btn w-1/5 bg-green-800 text-green-50 mt-0 shadow-md cursor-pointer" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <% if (title == "Edit data") { %>
+        
+    <!--! PINJAM  POP UP -->
+<div class="modal fixed w-screen h-screen z-10 hidden" id="pinjam">
+    <div class="flex items-center justify-center fixed left-0 bottom-0 w-screen h-screen bg-gray-800 z-10 opacity-50"></div>
+    <div class="flex items-center justify-center fixed left-0 bottom-0 w-screen h-screen bg-transparent z-10">
+        <div class="bg-green-50 rounded-lg w-1/3">
+        <div class="flex flex-col items-start p-4">
+            <div class="flex items-center w-full ">
+                <div class="text-green-900 text-lg font-bold">Pinjam</div>
+                <svg class="ml-auto fill-current text-green-700 hover:text-green-50 hover:bg-green-400 rounded-full bg-transparent p-1 w-8 h-8 cursor-pointer " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" onclick="closeModal('pinjam')">
+                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/>
+                </svg>
+            </div>
+            <hr class=" border-1 border-green-900 w-1/5 ">
+            <br>
+            <div class="w-full">
+                <form action="/pinjam" method="POST" class="flex flex-col gap-4 px-5">
+                    <div class="flex flex-col ">
+                        <label for="nama" class="t_label w-full text-left px-2 text-md">Nama *</label>
+                        <input type="text" id="nama" class="t_form" name="Nama" autocomplete="off" required>
+                    </div>
+                    <div class="flex flex-col ">
+                        <label for="bidang" class="t_label w-full text-left px-2 text-md">Bidang *</label>
+                        <input type="text" id="bidang" name="Bidang" class="t_form" autocomplete="off" required>
+                    </div>
+                    <div class="hidden">
+                        <!-- ! Dara references -->
+ <input type="text" name="Kode_Kategori" value="<%= kode %>">
+ <input type="text" name="idData" value="<%=id  %>">
+ <input type="text" name="No_Definitif" value="<%=No_Definitif  %>">
+ <input type="text" name="Rak" value="<%=Rak  %>">
+ <input type="text" name="Boks" value="<%=Boks%>">
+ <input type="text" name="Isi_Berkas" value="<%= Isi_Berkas%>">
+                            
+                    </div>
+                    <div class="ml-auto flex gap-4 mb-2 mt-2  justify-end">
+                        <a class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-green-50 py-2 px-6 border border-green-500 hover:border-transparent rounded-md" onclick="closeModal('pinjam')">
+                            Batal
+                        </a>
+                        <input class=" appearance-none bg-green-500 hover:bg-green-700 text-green-50 font-bold py-2 rounded-md text-center px-6" type="submit" value="Simpan">
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- ! Delete Pop UP -->
+<div class="modal fixed w-screen h-screen z-10 hidden" id="delete">
+    <div class="flex items-center justify-center fixed left-0 bottom-0 w-screen h-screen bg-gray-800 z-10 opacity-50"></div>
+    <div class="flex items-center justify-center fixed left-0 bottom-0 w-screen h-screen bg-transparent z-10">
+        <div class="bg-green-50 rounded-lg w-1/3">
+        <div class="flex flex-col items-start p-4">
+            <div class="flex items-center w-full ">
+                <div class="text-green-900 text-lg font-bold">Hapus</div>
+                <svg class="ml-auto fill-current text-green-700 hover:text-green-50 hover:bg-green-400 rounded-full bg-transparent p-1 w-8 h-8 cursor-pointer " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" onclick="closeModal('delete')">
+                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/>
+                </svg>
+            </div>
+            <hr class=" border-1 border-red-900 w-1/5 ">
+            <br>
+            <div class="w-full">
+                <p class="text-sm text-green-700 text-md font-semibold">Yakin ingin hapus data ini ?</p>
+            </div>
+            <br>
+            <hr>
+            <div class="ml-auto">
+                <a class="bg-transparent hover:bg-green-500 text-green-700 font-bold hover:text-green-50 py-2 px-6 border border-green-500 hover:border-transparent rounded-md" onclick="closeModal('delete')">
+                    Batal
+                </a>
+                <a class="bg-red-500 hover:bg-red-700 text-green-50 font-bold py-2 px-6 rounded-md border border-red-700 ml-3" href="/data/delete/<%= id %>/<%= kode %>">
+                    Hapus
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<% } %>
+
+<script>
+    // let data = document.querySelector('.modal')
+    function modal(target) {
+        let hidden = document.getElementById(target)
+        hidden.classList.remove('hidden')
+    }
+    function closeModal(target) {
+        let hidden = document.getElementById(target)
+        hidden.classList.add('hidden')
+    }
+    
+</script>

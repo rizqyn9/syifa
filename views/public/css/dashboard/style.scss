@@ -1,0 +1,9 @@
+@import '../component/tailwindTemp';
+
+.form{
+    label{
+        justify-self: end;
+        // background-color: red;  
+        flex: .5;
+    }
+}

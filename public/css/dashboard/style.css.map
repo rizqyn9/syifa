@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AACI,KADC,CACD,KAAK,CAAA;EACD,YAAY,EAAE,GAAG;EAEjB,IAAI,EAAE,EAAE;CACX",
+    "sources": [
+        "style.scss",
+        "../component/_tailwindTemp.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

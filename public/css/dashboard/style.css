@@ -1,0 +1,8 @@
+.form label {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -webkit-box-flex: .5;
+      -ms-flex: .5;
+          flex: .5;
+}
+/*# sourceMappingURL=style.css.map */

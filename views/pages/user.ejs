@@ -1,0 +1,36 @@
+<%- include('./components/_head') %>
+<%- include('./components/_modal') %>
+
+<!-- ! NAVBAR -->
+<%- include('./components/_navbar') %>
+<%- include('./components/_container') %>
+
+<!-- ! Content -->
+
+<br>
+<br>
+<div class="bg-green-800 grid place-items-center">
+    <div class="relative border-2 border-green-300 rounded-full overflow-hidden w-32 h-32">
+        <img src="/img/cover.jpg" class="absolute w-32 shadow-xl rounded-full -top-10" alt="">
+    </div>
+
+    <div>
+        <form action="">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" value="name">
+            </div>
+            <div>
+                <label for="name">Position</label>
+                <input type="text" value="Admin">
+            </div>
+            <input type="submit" value="">
+        </form>
+    </div>
+    
+</div>
+
+
+
+<!-- ! Footer -->
+<%- include('./components/_footer') %>

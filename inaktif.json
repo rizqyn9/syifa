@@ -1,0 +1,35 @@
+
+{
+    "No_Definitif" : "112334234",
+    "Kode_Klasifikasi" : "112334234",
+    "Properties" : {
+        "Author"    : "Rizqy",
+        "Bulan"     : "Maret",
+        "Tahun"     : "2000"
+    },
+    "Isi_Berkas" : "Data Pribadi",
+    "Retensi_JRA" : "Bla bla",
+    "Keterangan_JRA" : "Ketreangan",
+    "Nilai_Guna" : "Nilai Guna",
+    "Media" : "Boasdad",
+    "Lokasi_Simpan" : "Rumah",
+    "Tingkat_Perkembangan" : "Nolll",
+    "Edited" : {
+    }
+}
+
+"let dataTest = [
+    req.body.No_Definitif,
+    req.body.Kode_Klasifikasi,
+    req.body.Properties,
+    req.body.Properties.Author,
+    req.body.Properties.Bulan,
+    req.body.Properties.Tahun,
+    req.body.Isi_Berkas,
+    req.body.Retensi_JRA,
+    req.body.Keterangan_JRA,
+    req.body.Nilai_Guna,
+    req.body.Media,
+    req.body.Lokasi_Simpan,
+    req.body.Tingkat_Perkembangan
+]"

@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100vh;
+    grid-template-columns: max-content auto ;
+    // overflow: hidden;
+}
+
+.nav-panel{
+    width: max-content;
+    height: 100%;
+    grid-column: 1;
+    // background-color: blue;
+}
+.content-panel{
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    grid-column: 2;
+    // background-color: darkmagenta !important;
+}

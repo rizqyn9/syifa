@@ -1,0 +1,46 @@
+
+<% list.forEach((element,index) => { %>
+    <tr class="<%= index % 2 == 0 ? 'bg-green-50' : '' %>">
+        <td class=" py-2 whitespace-no-wrap border-b border-gray-200">
+            <div class="text-sm text-gray-900 text-center">
+                <%= index + 1 %> 
+            </div>
+        </td>
+        <td class="py-2 px-2 whitespace-no-wrap border-b border-gray-200">
+            <div class="text-sm text-gray-900 h-7 grid place-items-center">
+                <a href="" class="w-7 h-7 bg-green-400 rounded-full grid place-items-center">
+                    <svg class="h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                </a>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                </svg> -->
+            </div>
+        </td>
+        <td class="py-2 px-2 whitespace-no-wrap border-b border-gray-200">
+            <div class="text-sm  text-gray-900">
+                <%- element.Isi_Berkas %>
+            </div>
+        </td>
+        <td class="py-2 text-center whitespace-no-wrap border-b border-gray-200">
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                <%- 10 %>
+            </span>
+        </td>
+        <td class="py-2 px-2 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nemo, necessitatibus odit illo, culpa odio labore vel iure perferendis quia nulla expedita est minima similique! Molestiae, autem. Odit, sint ducimus.
+        </td>
+        <td class="py-2 whitespace-no-wrap text-center border-b border-gray-200 text-sm leading-5 font-medium">
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                Inactive
+            </span>
+        </td>
+        <td class="py-2 px-2 whitespace-no-wrap border-b border-gray-200 text-sm leading-0 text-gray-500">
+            <!-- <a href="/data/<%- element._id %>"
+                class="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:underline" >
+            </a> -->
+            Lorem ipsum dolor sit amet.
+        </td>
+    </tr>
+<% }); %> 
