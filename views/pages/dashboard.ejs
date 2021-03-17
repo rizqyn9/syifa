@@ -9,17 +9,19 @@
 
 
 <div class="w-11/12 h-max  text-3xl text-green-700 font-bold p-10 flex flex-col justify-items-center m-auto tracking-wide">
-    <h1>Selamat datang di </h1>
-    <div class="rounded bg-green-300 p-5 py-10 shadow-2xl w-80 mt-10 relative">
-            <div class="absolute right-10 h-full">
-                <h3 class=" font-extrabold text-7xl text-green-700"><%= totalKategori %></h3>
-            </div>
-            <div class="w-max ">
-                <p class=" text-green-900 font-semibold tracking-wide text-2xl ">Naskah Dinas</p>
-                <a class=" text-green-900 font-bold text-lg hover:text-white" href="/kategori">View more.</a>
-            </div>
+    <div class=" bg-green-200 border-l-4 border-green-500 w-full  p-5 shadow-md">
+        <h1 >Selamat datang!!</h1>
+        <p class="mt-2 font-normal">Selamat datang <strong><%= userDetail.name %></strong> di SIAI ( Sistem Informasi Arsip Inaktif ), anda login sebagai <strong><%= admin ? "Admin" : "Member" %></strong> </p>
+    </div>
+    <div class="rounded p-5 shadow-xl w-96 mt-10 relative bg-gradient-to-l from-green-200 to-green-400 border-l-4 border-green-600" style="height: 20vh;">
+        <div class="absolute top-0 right-5 h-full flex items-center ">
+            <h3 class=" font-extrabold text-7xl text-green-700"><%= totalKategori %></h3>
         </div>
-
+        <div class="w-max flex flex-col items-center justify-evenly h-full">
+            <p class=" text-green-900 font-semibold tracking-wide text-2xl ">Naskah Dinas</p>
+            <a class=" text-green-900 font-bold text-lg hover:text-white rounded-md bg-green-200 px-3 py-1 hover:bg-green-600" href="/kategori">View more.</a>
+        </div>
+    </div>
 </div>
 <!-- ! Footer -->
 <%- include('./components/_footer') %>
