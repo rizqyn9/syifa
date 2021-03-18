@@ -4,15 +4,15 @@
 <!-- ! NAVBAR -->
 <%- include('./components/_navbar') %>
 <%- include('./components/_container') %>
-<% if(alert.message != "") { %>
+<% if(alertOpen.message != "") { %>
     <div class="alert-toast t_alert-position" >
         <input type="checkbox" class="hidden" id="footertoast">
-        <label class="close t_alert-container  <%= alert.status == "success" ? 'bg-green-200' : 'bg-red-200' %> " title="close" for="footertoast" style="min-height: 5rem;">
+        <label class="close t_alert-container  <%= alertOpen.status == "success" ? 'bg-green-200' : 'bg-red-200' %> " title="close" for="footertoast" style="min-height: 5rem;">
             <svg class="t_alert-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                 <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
             </svg>
             <div class="t_alert-message">
-                <%= alert.message %>
+                <%= alertOpen.message %>
             </div>
         </label>
     </div>
