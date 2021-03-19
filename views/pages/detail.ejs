@@ -20,8 +20,8 @@
 <div class=" w-full h-full p-5">
     <div class="w-full h-full">
         <div class="flex ">
-            <a class="appearance-none focus:outline-none w-1/6 px-3 py-1 border-2  t_btn-active" onclick="showData('#data-table','#content','#BTN-data-table','#BTN-edit')" id="BTN-data-table">Data</a>
-            <a class="appearance-none focus:outline-none w-1/6 px-3 py-1 border-2 t_btn-deactive" onclick="showData('#content','#data-table','#BTN-edit','#BTN-data-table')" id="BTN-edit">Edit</a>
+            <a class="appearance-none focus:outline-none w-1/6 px-3 py-1 border-2  t_btn-active cursor-pointer" onclick="showData('#data-table','#content','#BTN-data-table','#BTN-edit')" id="BTN-data-table">Data</a>
+            <a class="appearance-none focus:outline-none w-1/6 px-3 py-1 border-2 t_btn-deactive cursor-pointer" onclick="showData('#content','#data-table','#BTN-edit','#BTN-data-table')" id="BTN-edit">Edit</a>
         </div>
         <div class="w-full h-5/6 border-2 border-green-900 rounded-b-xl rounded-r-xl bg-green-50 p-5">
             <div class="w-full  " id="data-table">
@@ -71,19 +71,19 @@
                         </div>
                         </div>
                     <div class="w-1/2 m-auto flex justify-evenly">
-                        <a class="t_primary-btn w-1/3"
+                        <a class="t_primary-btn w-1/3 cursor-pointer"
                         onclick="ubahData()" id="ubah">
                             Ubah
                         </a>
-                        <a class=" t_secondary-btn py-3 w-1/3 hidden"
+                        <a class=" t_secondary-btn py-3 w-1/3 hidden cursor-pointer"
                         onclick="batalUbah()" id="batal">
                             Batal
                         </a>
-                        <a class="t_red-btn py-3 w-1/3"
+                        <a class="t_red-btn py-3 w-1/3 cursor-pointer"
                          id="delete-btn" onclick="modal('modal_delete')">
                             Delete Kategori
                         </a>
-                        <input type="submit" value="Submit" class="t_primary-btn py-2 hidden w-1/3" 
+                        <input type="submit" value="Submit" class="t_primary-btn py-2 hidden w-1/3 cursor-pointer" 
                         id="submit">
                     </div>
                 </form>

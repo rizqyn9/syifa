@@ -28,6 +28,7 @@ router.get('/promote/:id', async(req,res,next) => {
         res.status(501).redirect('/admin')
     }
 })
+
 router.get('/demote/:id', async(req,res,next) => {
     // console.log(req.params)
     try {
@@ -54,6 +55,7 @@ router.get('/demote/:id', async(req,res,next) => {
         res.status(501).redirect('/admin')
     }
 })
+
 router.get('/delete/:id', async(req,res,next) => {
     // console.log(req.params)
     try {
@@ -78,6 +80,38 @@ router.get('/delete/:id', async(req,res,next) => {
         req.flash("alertMessage", "Gagal melakukan aksi. Server Error")
         req.flash("alertStatus", "fail")
         res.status(501).redirect('/admin')       
+    }
+})
+
+
+router.post('/:id/edit', (req,res,next) => {
+    console.log(req.body);
+    try {
+        // console.log(req.params.id);
+        Users.findByIdAndUpdate(req.params.id,{...req.body},(err,result) => {
+            if(err){
+                console.log(err);
+                res.status(501).redirect(`/admin`)
+            } else {
+                result.password = result.encryptPassword(req.body.password)
+                result.save((err,data) => {
+                    if(err){
+                        req.flash("alertMessage",'Gagal memperbarui data');
+                        req.flash("alertStatus",'fail');
+                        res.status(501).redirect(`/admin`)
+                    } else {
+                        req.flash("alertMessage",'Berhasil memperbarui data');
+                         req.flash("alertStatus",'success');
+                        res.status(201).redirect(`/admin`)
+                    }
+                })
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        req.flash("alertMessage",'Tidak dapat memperbarui data');
+        req.flash("alertStatus",'fail');
+        res.status(501).redirect(`/admin`)
     }
 })
 

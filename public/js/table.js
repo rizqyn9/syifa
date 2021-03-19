@@ -14,7 +14,7 @@ $(document).ready(function() {
   
     // DataTable
     var table = $('#example').DataTable( {
-        scrollY:        "30vh",
+        scrollY:        "35vh",
         scrollX:        true,
         scrollCollapse: false,
         paging:         true,

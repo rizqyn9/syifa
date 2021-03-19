@@ -15,7 +15,6 @@
     </div>
 <% } %>
 <div class="h-full w-full" x-data="{ showModal1: false, showModal2: false, showModal3: false }" :class="{'overflow-y-hidden': showModal1 || showModal2 || showModal3}">
-    <br>
     <div class="px-10 h-2/5 overflow-hidden text-green-900">
         <div class="flex justify-between items-center">
             <h1 class="text-2xl font-bold text-green-700">Daftar Admin</h1>
@@ -25,30 +24,29 @@
             </button>
         </div>
         <br>
-        <div class="table-wrapper h-full overflow-scroll ">
-            <table class="w-full bg-green-50">
+        <div class="table-wrapper h-full overflow-scroll shadow-lg">
+            <table class="w-full bg-green-50 ">
                 <thead class="bg-green-200">
                     <tr>
-                        <th>No</th>
-                        <th>Action</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Created At</th>
-                        <th>Action</th>
+                        <th class="px-3 py-1">No</th>
+                        <th class="px-3 py-1">Action</th>
+                        <th class="px-3 py-1">Nama</th>
+                        <th class="px-3 py-1">Email</th>
+                        <th class="px-3 py-1">Created At</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
                     <% dataAdmin.forEach((element,index) => { %>
                         <tr class="bg-green-100 py-3">
-                            <td><%= index + 1%> </td>
-                            <td><a  class="modalUser" onclick="modalUser(this)" data-name="<%= element.name%>" data-email="<%= element.email%>" data-id="<%= element._id %>" data-admin="true">action</a> </td>
+                            <td class="text-center"><%= index + 1%> </td>
+                            <td class="w-full py-2 flex justify-center items-center">
+                                <a  class="modalUser bg-green-200 p-1 rounded-full border border-green-700" onclick="modalUser(this)" data-name="<%= element.name%>" data-email="<%= element.email%>" data-id="<%= element._id %>" data-admin="true">
+<svg id="Layer_1" class="pl-1" enable-background="new 0 0 24 24" height="20"  width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="m9 10c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm0-9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"/></g><g><path d="m8.5 21h-8c-.276 0-.5-.224-.5-.5v-4c0-2.481 2.019-4.5 4.5-4.5h6c.276 0 .5.224.5.5s-.224.5-.5.5h-6c-1.93 0-3.5 1.57-3.5 3.5v3.5h7.5c.276 0 .5.224.5.5s-.224.5-.5.5z"/></g><g><g><path d="m17 20c-1.378 0-2.5-1.122-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.122 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"/></g><g><path d="m17.797 24h-1.595c-.516 0-.944-.387-.995-.901l-.127-1.271c-.303-.135-.592-.303-.865-.503l-1.168.527c-.469.214-1.02.035-1.277-.412l-.797-1.381c-.258-.447-.136-1.011.282-1.312l1.029-.74c-.02-.155-.034-.327-.034-.507s.014-.353.034-.507l-1.029-.74c-.418-.301-.54-.865-.282-1.312l.797-1.381c.258-.447.806-.624 1.277-.412l1.168.527c.273-.2.562-.368.865-.503l.127-1.271c.051-.513.479-.9.995-.9h1.595c.516 0 .944.387.995.901l.127 1.271c.304.135.593.304.865.503l1.168-.527c.471-.211 1.02-.034 1.277.412l.797 1.381c.258.447.136 1.011-.282 1.312l-1.029.74c.02.155.034.327.034.507s-.014.353-.034.507l1.029.74c.418.301.54.865.282 1.312l-.796 1.38c-.258.446-.805.625-1.277.412l-1.168-.527c-.273.2-.562.368-.865.503l-.128 1.272c-.051.513-.479.9-.995.9zm-3.512-3.755c.115 0 .229.04.321.117.339.284.714.501 1.113.647.18.066.307.229.326.42l.158 1.571h1.595l.157-1.571c.019-.191.146-.354.326-.42.399-.146.774-.364 1.113-.647.148-.123.352-.151.526-.072l1.444.652.797-1.381-1.278-.918c-.156-.112-.233-.304-.201-.493.037-.211.067-.426.067-.648s-.03-.437-.067-.648c-.033-.189.045-.38.201-.493l1.278-.918-.797-1.381-1.444.651c-.175.079-.379.051-.527-.072-.338-.284-.712-.501-1.113-.647-.18-.066-.307-.229-.326-.42l-.157-1.574h-1.595l-.157 1.571c-.019.191-.146.354-.326.42-.399.146-.774.364-1.113.647-.147.123-.351.152-.526.072l-1.444-.652-.797 1.381 1.278.918c.156.112.233.304.201.493-.037.211-.067.426-.067.648s.03.437.067.648c.033.189-.045.38-.201.493l-1.278.918.797 1.381 1.444-.651c.066-.028.135-.042.205-.042z"/></g></g></svg>
+                                </a> 
+                            </td>
                             <td><%= element.name%></td>
                             <td><%= element.email%> </td>
                             <td><%= element.created_At %> </td>
-                            <td>
-                                <a href="admin/demote/<%= element._id %>" > DEMOTE </a>
-                                <a href="admin/delete/<%= element._id%> ">DELETE</a>
-                            </td>
                         </tr>
                     <% }); %>
                 </tbody>
@@ -65,29 +63,29 @@
             </button>
         </div>
         <br>
-        <div class="table-wrapper h-full overflow-scroll ">
+        <div class="table-wrapper h-full overflow-scroll shadow-md">
             <table class="w-full bg-green-50">
                 <thead class="bg-green-200">
                     <tr>
-                        <th>No</th>
-                        <th>Action</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Created At</th>
+                        <th class="px-3 py-1">No</th>
+                        <th class="px-3 py-1">Action</th>
+                        <th class="px-3 py-1">Nama</th>
+                        <th class="px-3 py-1">Email</th>
+                        <th class="px-3 py-1">Created At</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% dataMember.forEach((element,index) => { %>
                         <tr class="bg-green-100">
-                            <td><%= index + 1%> </td>
-                            <td><a  class="modalUser" onclick="modalUser(this)" data-name="<%= element.name%>" data-email="<%= element.email%>" data-id="<%= element._id %>" data-admin="true">action</a> </td>
+                            <td class="text-center"><%= index + 1%> </td>
+                            <td class="w-full py-2 flex justify-center items-center">
+                                <a  class="modalUser bg-green-200 p-1 rounded-full border border-green-700" onclick="modalUser(this)" data-name="<%= element.name%>" data-email="<%= element.email%>" data-id="<%= element._id %>" data-admin="false">
+<svg id="Layer_1" class="pl-1" enable-background="new 0 0 24 24" height="20"  width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="m9 10c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm0-9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"/></g><g><path d="m8.5 21h-8c-.276 0-.5-.224-.5-.5v-4c0-2.481 2.019-4.5 4.5-4.5h6c.276 0 .5.224.5.5s-.224.5-.5.5h-6c-1.93 0-3.5 1.57-3.5 3.5v3.5h7.5c.276 0 .5.224.5.5s-.224.5-.5.5z"/></g><g><g><path d="m17 20c-1.378 0-2.5-1.122-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.122 2.5 2.5-1.122 2.5-2.5 2.5zm0-4c-.827 0-1.5.673-1.5 1.5s.673 1.5 1.5 1.5 1.5-.673 1.5-1.5-.673-1.5-1.5-1.5z"/></g><g><path d="m17.797 24h-1.595c-.516 0-.944-.387-.995-.901l-.127-1.271c-.303-.135-.592-.303-.865-.503l-1.168.527c-.469.214-1.02.035-1.277-.412l-.797-1.381c-.258-.447-.136-1.011.282-1.312l1.029-.74c-.02-.155-.034-.327-.034-.507s.014-.353.034-.507l-1.029-.74c-.418-.301-.54-.865-.282-1.312l.797-1.381c.258-.447.806-.624 1.277-.412l1.168.527c.273-.2.562-.368.865-.503l.127-1.271c.051-.513.479-.9.995-.9h1.595c.516 0 .944.387.995.901l.127 1.271c.304.135.593.304.865.503l1.168-.527c.471-.211 1.02-.034 1.277.412l.797 1.381c.258.447.136 1.011-.282 1.312l-1.029.74c.02.155.034.327.034.507s-.014.353-.034.507l1.029.74c.418.301.54.865.282 1.312l-.796 1.38c-.258.446-.805.625-1.277.412l-1.168-.527c-.273.2-.562.368-.865.503l-.128 1.272c-.051.513-.479.9-.995.9zm-3.512-3.755c.115 0 .229.04.321.117.339.284.714.501 1.113.647.18.066.307.229.326.42l.158 1.571h1.595l.157-1.571c.019-.191.146-.354.326-.42.399-.146.774-.364 1.113-.647.148-.123.352-.151.526-.072l1.444.652.797-1.381-1.278-.918c-.156-.112-.233-.304-.201-.493.037-.211.067-.426.067-.648s-.03-.437-.067-.648c-.033-.189.045-.38.201-.493l1.278-.918-.797-1.381-1.444.651c-.175.079-.379.051-.527-.072-.338-.284-.712-.501-1.113-.647-.18-.066-.307-.229-.326-.42l-.157-1.574h-1.595l-.157 1.571c-.019.191-.146.354-.326.42-.399.146-.774.364-1.113.647-.147.123-.351.152-.526.072l-1.444-.652-.797 1.381 1.278.918c.156.112.233.304.201.493-.037.211-.067.426-.067.648s.03.437.067.648c.033.189-.045.38-.201.493l-1.278.918.797 1.381 1.444-.651c.066-.028.135-.042.205-.042z"/></g></g></svg>
+                                </a>
+                            </td>
                             <td><%= element.name%></td>
                             <td><%= element.email%> </td>
                             <td><%= element.created_At %> </td>
-                            <td>
-                                <a href="admin/promote/<%= element._id %>" > Promote </a>
-                                <a href="admin/delete/<%= element._id%>">DELETE</a>
-                            </td>
                         </tr>
                     <% }); %>
                 </tbody>
@@ -95,7 +93,7 @@
         </div>
     </div>
     
-<div class="modal fixed w-screen h-screen z-10 " id="userModal">
+<div class="modal fixed w-screen h-screen z-10 hidden" id="userModal">
     <div class="flex items-center justify-center fixed left-0 bottom-0 w-screen h-screen bg-gray-800 z-10 opacity-50"></div>
     <div class="flex items-center justify-center fixed left-0 bottom-0 w-screen h-screen bg-transparent z-10">
         <div class="bg-green-50 rounded-lg w-1/3">
@@ -109,25 +107,27 @@
             <hr>
             <br>
             <div class="w-11/12 m-auto">
-                <form action="" id="ubahdata" class="flex flex-col gap-3 w-full">
+                <form action="" id="FormUbahdata" method="POST" class="flex flex-col gap-3 w-full p-3 shadow-inner rounded-md">
                     <label for="user_name" class="t_label self-start">Username</label>
-                    <input type="text" id="user_name" class="t_form" disabled>
+                    <input type="text" id="user_name" class="t_form" disabled="true" name="name">
                     <label for="user_email" class="t_label self-start" >E-mail</label>
-                    <input type="email" id="user_email" class="t_form" disabled>
-                    <label for="user_id" class="t_label self-start">Password Baru</label>
-                    <input type="password" class="t_form" disabled>
+                    <input type="email" id="user_email" class="t_form" disabled="true" autocomplete="off" name="email">
                     <input type="text" class="hidden" id="user_id">
-                    <a onclick="ubahData('ubahData',this)" class="text-green-700 hover:underline pointer-">Ingin merubah data ?</a>
-                    <div class="flex gap-5 mt-3 w-full justify-center hidden" id="ubahData">
-                        <input type="button" value="Batal" onclick="closeModal('userModal')" class="t_primary-btn  " style="min-width: 7rem;">
-                        <input type="submit" value="Simpan" class="t_primary-btn" style="min-width: 7rem;">
+                    <a onclick="ubahData('ubahData',this)" class="text-green-700 hover:underline cursor-pointer" id="text-ubah-data">Ingin merubah data ?</a>
+                    <div class="flex flex-col gap-2 w-full justify-center hidden" id="ubahData">
+                        <label for="user_id" class="t_label self-start">Password Baru</label>
+                        <input type="password" class="t_form" disabled="true" placeholder="Isi jika ingin merubah" name="password">
+                        <div class="flex mt-3 gap-5 w-full justify-center">
+                            <input type="button" value="Batal" onclick="closeModal('userModal')" class="t_primary-btn  " style="min-width: 7rem;">
+                            <input type="submit" value="Simpan" class="t_primary-btn" style="min-width: 7rem;">
+                        </div>
                     </div>
                 </form>
             </div>
             <hr>
-            <div class="ml-auto">
-                <a></a>
-                <a></a>
+            <div class="flex justify-center w-full gap-4 mt-5">
+                <a href="admin/delete" class="t_red-btn w-1/4" id="deleteUser">Delete</a>
+                <a href="admin/promote" class="t_primary-btn w-1/4" id="positionUser"> Promote </a>
             </div>
         </div>
         </div>
@@ -272,16 +272,35 @@
         function modalUser (data) {
             // console.log(data);
             let ubahdata =document.getElementById('ubahData') 
+            let textUbahData =document.getElementById('text-ubah-data') 
+            let form = document.getElementById('FormUbahdata')
+            let deleteUser = document.getElementById('deleteUser')
+            let positionUser= document.getElementById('positionUser')
+
             if(!ubahdata.classList.contains('hidden')) {
                 ubahdata.classList.add('hidden')
+            }
+            if(textUbahData.classList.contains('hidden')) {
+                textUbahData.classList.remove('hidden')
+            }
+            if(form.classList.contains('bg-green-100')) {
+                form.classList.remove('bg-green-100')
             }
 
             let name = data.getAttribute('data-name')
             let id = data.getAttribute('data-id')
             let email = data.getAttribute('data-email')
-            // console.log(name, id, email);
+            let admin = data.getAttribute('data-admin')
+            // console.log(typeof admin);
+
+            admin = admin == "true" ? true : false
+            deleteUser.href = `admin/delete/${id}`
             
+            positionUser.href = admin? `admin/promote/${id}` : `admin/demote/${id}`
+            positionUser.innerHTML =  admin? `Promote` : `Demote`
             initModal('#userModal',name,id,email)
+            form.action = `/admin/${id}/edit`
+            // console.log(form);
           }
 
           function initModal (ID_modal,_name,_id,_email) {  
@@ -292,8 +311,13 @@
             modal.querySelector('#user_id').value = _id;
           }
 
-          function ubahData(_id, _self) {
-            document.getElementById(_id).classList.remove('hidden')
+          function ubahData(DOM_id, _self) {
+            document.getElementById(DOM_id).classList.remove('hidden')
             _self.classList.add('hidden')
+            document.querySelectorAll('form .t_form').forEach(el => {
+                el.disabled= false
+            })
+            document.getElementById('FormUbahdata').classList.add('bg-green-100')
+
           }
 </script>
