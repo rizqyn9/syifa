@@ -9,7 +9,7 @@ const Kategori = new mongoose.Schema({
         type: String
     },
     Kode:{
-        type: Number,
+        type: String,
         // required: true,
         // unique: true
     },
