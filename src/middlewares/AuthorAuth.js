@@ -9,11 +9,13 @@ module.exports = {
     
             //  Check name from username
             const kategoriData = await Kategori.findOne({Kode : req.params.kode})
+            console.log(kategoriData);
             // console.log(kategoriData);
             // console.log(req.session.user.id);
 
             // Check name Author 
             const Author = await User.findById(kategoriData.Author)
+            console.log(Author);
             const AuthorName = Author.name
             if(kategoriData.Status == "Unlocked"){
                 console.log("Unlocked");

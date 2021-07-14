@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const InAktif = new mongoose.Schema({
     Kode : {
         type: String,
-        required: true
     },
     Properties:{
         Author:{

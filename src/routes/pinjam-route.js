@@ -21,7 +21,7 @@ route.get('/', async (req,res,next) => {
 route.post('/', async (req,res,next) => {
     console.log(req.body);
     try {
-        await Inaktif.findByIdAndUpdate(req.body.idData,{Pinjam: true})
+        await Inaktif.findOneAndUpdate(req.body.idData,{Pinjam: true})
                 .then(data => {
                     if(!data) {
                         return res.status(502).send("Gaga;")

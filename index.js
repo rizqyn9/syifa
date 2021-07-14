@@ -95,9 +95,9 @@ app.use('/user',auth, user_Routes)
 app.use('/pinjam', auth, pinjam_Routes)
 app.use('/test', inTest_Routes)
 
-// app.use('*',(req,res,next) => {
-//     res.redirect('/auth')
-// })
+app.use('/',(req,res,next) => {
+    res.redirect('/auth')
+})
 
 app.listen(PORT, () => {
     console.log(`Running on : http://localhost:${PORT}`)

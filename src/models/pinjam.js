@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Pinjam = new mongoose.Schema({
     Kode_Kategori : {
-        type: Number
+        type: String
     },
     Bidang : {
         type: String
@@ -17,7 +17,7 @@ const Pinjam = new mongoose.Schema({
         type: String,
     },
     No_Definitif : {
-        type: Number
+        type: String
     }, 
     Lokasi_Simpan : {
         Rak : {
