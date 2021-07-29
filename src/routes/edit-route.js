@@ -6,7 +6,7 @@ route.get('/:id',async(req,res,next)=> {
 	const id = req.params.id
     try {
         const data = await inAktif.findById(id)
-        console.log(data)
+        console.log(data.Properties.Bulan)
         res.render('pages/inaktif', {
             userDetail      : req.session.user,
             admin           : req.body.Admin,
@@ -49,9 +49,28 @@ route.post('/:id/:kode', async (req,res,next) => {
     const data = await req.body
     const user = await req.session.user.id
     // console.log(req.session.user.id)
-    // await console.log(data)
+    await console.log(data)
     try{
-        inAktif.findByIdAndUpdate(id,data,{useFindAndModify:false})
+        inAktif.findByIdAndUpdate(id,
+            {...data, 
+                Properties:{
+                    Bulan: data.Bulan,
+                    Tahun: data.Tahun
+                },
+                Retensi_JRA: {
+                    Aktif : data.Aktif,
+                    Inaktif : data.Inaktif
+                },
+                Jumlah:{
+                    Jumlah_Value : data.Jumlah_Value,
+                    Jumlah_Jenis: data.Jumlah_Jenis
+                },
+                Lokasi_Simpan: {
+                    Rak : data.Lokasi_Simpan_Rak,
+                    Boks : data.Lokasi_Simpan_Boks
+                },
+            },
+            {useFindAndModify:false})
         .then(data => {
             if(!data){
                 console.log("Gagal")

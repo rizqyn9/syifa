@@ -14,17 +14,13 @@
                 <label for="Bulan" class="t_label">Bulan / Tahun *</label>
                 <div class="container w-full flex gap-4">
                     <select name="Bulan" id="" class="t_form py-0 w-1/2">
-                        <option value="Januari">Januari</option>
-                        <option value="Februari">Februari</option>
-                        <option value="Maret">Maret</option>
-                        <option value="April">April</option>
-                        <option value="Mei">Mei</option>
-                        <option value="Juni">Juni</option>
-                        <option value="Juli">Juli</option>
-                        <option value="Agustus">Agustus</option>
-                        <option value="September">September</option>
-                        <option value="November">November</option>
-                        <option value="Desember">Desember</option>
+                        <% 
+                            var MonthOpt = ["Januari","Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "November", "Desember"]
+                            for (let i = 0; i < MonthOpt.length; i++) {
+                                    let trial = (typeof Bulan !== 'undefined') ? (Bulan == MonthOpt[i] ? 'selected' : '') : ''
+                                    %><option value="<%= MonthOpt[i] %>" <%= trial %>><%= MonthOpt[i] %></option><%
+                            }
+                        %>
                     </select>
                     <input type="number" placeholder="Tahun" class="t_form w-1/3" required min="1900" max="3200" name="Tahun" autocomplete="off" value="<%= (typeof Tahun !== 'undefined') ? Tahun  : ''%>">
                 </div>
@@ -63,33 +59,39 @@
             <div class="t_form-container">
                 <label for="Keterangan_JRA" class="t_label">Keterangan JRA</label>
                 <select type="text" name="Keterangan_JRA" class="t_form py-0 w-1/4" id="Keterangan_JRA" value="<%= (typeof Keterangan_JRA !== 'undefined') ? Keterangan_JRA: ''%>">
-                    <option value="" disabled>Choose one</option>
-                    <option value="Musnah">MUSNAH</option>
-                    <option value="Permanen">PERMANEN</option>
-                    <option value="Dinilai">DINILAI KEMBALI</option>
+                <% 
+                    var KetJRA = ["Choose One","Musnah","Permanen", "Dinilai Kembali"]
+                    for (let i = 0; i < KetJRA.length; i++) {
+                            let trial = (typeof Keterangan_JRA !== 'undefined') ? (Keterangan_JRA == KetJRA[i] ? 'selected' : '') : ''
+                            %><option value="<%= KetJRA[i] %>" <%= trial %>><%= KetJRA[i] %></option><%
+                    }
+                %>
                 </select>
             </div>
             
             <div class="t_form-container">
                 <label for="Nilai_Guna" class="t_label">Nilai Guna</label>
                 <select type="text" name="Nilai_Guna" id="Nilai_Guna" class="t_form py-0 w-1/4" value="<%= (typeof Nilai_Guna !== 'undefined') ? Nilai_Guna: ''%>">
-                    <option value="" disabled>Choose one</option>
-                    <option value="Administrasi">ADMINISTRASI</option>
-                    <option value="Hukum">HUKUM</option>
-                    <option value="Keuangan">KEUANGAN</option>
-                    <option value="IPTEK">IPTEK</option>
+                    <% 
+                        var NilaiGuna = ["Choose One","Administrasi","Hukum", "Keuangan", "IPTEK"]
+                        for (let i = 0; i < NilaiGuna.length; i++) {
+                                let trial = (typeof Nilai_Guna !== 'undefined') ? (Nilai_Guna == NilaiGuna[i] ? 'selected' : '') : ''
+                                %><option value="<%= NilaiGuna[i] %>" <%= trial %>><%= NilaiGuna[i] %></option><%
+                        }
+                    %>
                 </select>
             </div>
             
             <div class="t_form-container">
                 <label for="Media" class="t_label">Media</label>
                 <select type="text" name="Media" id="Media" class="t_form py-0 w-1/4" value="<%= (typeof Media !== 'undefined') ? Media: ''%>">
-                    <option value="" disabled>Choose one</option>
-                    <option value="Dokumen">Dokumen</option>
-                    <option value="Audio">Audio</option>
-                    <option value="Video">Video</option>
-                    <option value="Elektronik">Elektronik</option>
-                    <option value="Tekstual">Tekstual</option>
+                    <% 
+                        var MediaOpt = ["Choose One","Dokumen","Audio", "Video", "Elektronik", "Tekstual"]
+                        for (let i = 0; i < MediaOpt.length; i++) {
+                                let trial = (typeof Media !== 'undefined') ? (Media == MediaOpt[i] ? 'selected' : '') : ''
+                                %><option value="<%= MediaOpt[i] %>" <%= trial %>><%= MediaOpt[i] %></option><%
+                        }
+                    %>
                 </select>
             </div>
             
@@ -98,12 +100,13 @@
                 <div class="container flex gap-5" >
                     <input type="text" id="Jumlah" name="Jumlah_Value" class="t_form w-1/3" value="<%= (typeof Jumlah_Value !== 'undefined') ? Jumlah_Value: ''%>" placeholder="Jumlah" autocomplete="off">
                     <select name="Jumlah_Jenis" class="t_form py-0" value="<%= (typeof Jumlah_Jenis!== 'undefined') ? Jumlah_Jenis: ''%>">
-                        <option value="" disabled>Choose one</option>
-                        <option value="Berkas">Berkas</option>
-                        <option value="Bundel">Bundel</option>
-                        <option value="Exemplar">Exemplar</option>
-                        <option value="Lembar">Lembar</option>
-                        <option value="Buku">Buku</option>
+                        <% 
+                            var JumlahOpt = ["Choose One","Berkas","Exemplar", "Lembar", "Bundel", "Buku"]
+                            for (let i = 0; i < JumlahOpt.length; i++) {
+                                    let trial = (typeof Jumlah_Jenis !== 'undefined') ? (Jumlah_Jenis == JumlahOpt[i] ? 'selected' : '') : ''
+                                    %><option value="<%= JumlahOpt[i] %>" <%= trial %>><%= JumlahOpt[i] %></option><%
+                            }
+                        %>
                     </select>
                 </div>
             </div>
@@ -111,12 +114,13 @@
             <div class="t_form-container">
                 <label for="Tingkat_Perkembangan" class="t_label">Tingkat Perkembangan</label>
                 <select type="text" name="Tingkat_Perkembangan" id="Tingkat_Perkembangan" class="t_form py-0 w-1/4" value="<%= (typeof Tingkat_Perkembangan !== 'undefined') ? Tingkat_Perkembangan: ''%>">
-                    <option value="" disabled>Choose one</option>
-                    <option value="Asli">Asli</option>
-                    <option value="Tembusan">Tembusan</option>
-                    <option value="Salinan">Salinan / Ganda</option>
-                    <option value="Fotocopy">Fotocopy</option>
-                    <option value="Pertinggal">Pertinggal</option>
+                    <% 
+                        var TingkatOpt = ["Choose One","Asli","Tembusan", "Salinan", "Fotocopy", "Pertinggal"]
+                        for (let i = 0; i < TingkatOpt.length; i++) {
+                                let trial = (typeof Tingkat_Perkembangan !== 'undefined') ? (Tingkat_Perkembangan == TingkatOpt[i] ? 'selected' : '') : ''
+                                %><option value="<%= TingkatOpt[i] %>" <%= trial %>><%= TingkatOpt[i] %></option><%
+                        }
+                    %>
                 </select>
             </div>
 
