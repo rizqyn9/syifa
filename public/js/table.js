@@ -21,6 +21,12 @@ $(document).ready(function() {
         ordering:       false,
         fixedColumns:   true,
         pagingType :    "first_last_numbers",
+        columnDefs: [
+            {
+                targets: 5,
+                className: 'dt-body-left'
+            }
+          ]
 
         // dom: '<"top"i>rt<"bottom"flp><"clear">'
     } );
